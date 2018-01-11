@@ -1,5 +1,9 @@
 version: 1.0
 shards:
+  fluent-logger:
+    github: TobiasGSmollett/fluent-logger-crystal
+    commit: 0cea52781056a51406f2d3aa4b8573ce5f4ad573
+
   kemal:
     github: kemalcr/kemal
     commit: 17bd3dce3724b092fd1151cad126f5973da00204
@@ -7,6 +11,10 @@ shards:
   kilt:
     github: jeromegn/kilt
     version: 0.4.0
+
+  msgpack:
+    github: benoist/msgpack-crystal
+    version: 0.7.1
 
   radix:
     github: luislavena/radix
