@@ -15,11 +15,11 @@ class UrlService
   end
 
   def short_url
-    path = endpoint || create
+    path = get || create
     "#{@@basename}/#{path}"
   end
 
-  def endpoint
+  def get
     self.class.redis.get(@original_url)
   end
 
