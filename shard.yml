@@ -21,5 +21,5 @@ dependencies:
     version: ~> 1.9.0
   fluent-logger:
     github: TobiasGSmollett/fluent-logger-crystal
-  connection-pool:
+  pool:
     github: ysbaddaden/pool
