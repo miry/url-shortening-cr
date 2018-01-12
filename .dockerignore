@@ -1,2 +1,4 @@
-lib/
 .shards/
+bin/
+lib/
+.gitignore

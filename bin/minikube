@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+~/projects/go/bin/minikube config set iso-url https://storage.googleapis.com/minikube/iso/minikube-v0.24.0.iso
+~/projects/go/bin/minikube config set WantReportErrorPrompt false 
+~/projects/go/bin/minikube start --network-plugin cni --bootstrapper kubeadm --logtostderr 

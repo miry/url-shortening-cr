@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+set -e
+
+kubectl apply -f k8s/
+
+kubectl get po,deploy,service -o wide   

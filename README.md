@@ -23,5 +23,7 @@ $ docker run -e BASENAME="http://$(docker-machine ip):3000" -it --net=host miry/
 
 ### Profile
 
+- [2018.01.12 14:00] Deployed to minikube
+- [2018.01.12 12:00] Build k8s resources
 - [2018.01.11 21:45] Finished to build web app
 - [2018.01.11 15:25] Started to build web app

@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+# Docker
+docker build -t url-shortening-cr .
+docker run --name usc_redis --net=host -d redis
+docker run -e BASENAME="http://$(docker-machine ip):3000" -it --net=host url-shortening-cr
+docker stop redis
+docker rm redis
