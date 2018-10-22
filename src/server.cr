@@ -5,8 +5,11 @@ require "redis"
 require "pool/connection"
 
 Kemal.config.env = "production"
+if ENV["PORT"]?
+  Kemal.config.port = ENV["PORT"].to_i
+end
 
-basename = ENV["BASENAME"]? || "http://localhost:3000"
+basename = ENV["BASENAME"]? || "http://localhost:#{Kemal.config.port}"
 redis_url = ENV["REDIS_URL"]? || "redis://localhost:6379/1"
 
 # Storage connections
@@ -49,7 +52,7 @@ get "/:endpoint" do |env|
     env.response.status_code = 404
     next %({"error": "There are no such page"})
   end
-  
+
   env.redirect original_url.as(String)
 end
 

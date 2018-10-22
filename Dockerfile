@@ -1,4 +1,4 @@
-FROM crystallang/crystal:0.24.1
+FROM crystallang/crystal:0.26.1 as builder
 
 ENV KEMAL_ENV=production
 
@@ -17,7 +17,7 @@ RUN \
   apt-get install -y libssl-dev libxml2-dev libyaml-dev libgmp-dev libevent-dev && \
   apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 WORKDIR /app
-COPY --from=0 /app/server .
+COPY --from=builder /app/server .
 
 EXPOSE 3000
 CMD ["/app/server"]
